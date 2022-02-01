@@ -9,7 +9,7 @@ namespace DBConsoleApp
         {
             try
             {
-                string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Northwind;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -18,7 +18,7 @@ namespace DBConsoleApp
 
                     connection.Open();
 
-                    String sql = "SELECT LastName, FirstName FROM Employees";
+                    String sql = "SELECT CategoryName, Description FROM Categories";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
